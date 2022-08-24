@@ -1,3 +1,7 @@
+locals {
+  location = "Korea Central"
+}
+
 terraform {
   required_providers {
     azurerm = {
@@ -9,18 +13,10 @@ terraform {
     resource_group_name = "tfstate"
     storage_account_name = "tfstate5348"
     container_name = "tfstate"
-    key = "prod.terraform.tfstate" 
+    key = "stage.terraform.tfstate" 
   }
 }
 
 provider "azurerm" {
   features {}
-}
-
- 
-module "acr" {
-  source   = "./modules/acr"
-  resource_group_name = "ecremmocetesttfrg"
-  location = "Korea Central"
-  acr_name = "ecremmocetesttfacr"
 }
