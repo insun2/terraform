@@ -3,6 +3,8 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+variables:
+  terraformVersion: 1.2.7
 trigger:
 - main
 
@@ -10,6 +12,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: TerraformInstaller@0
+  displayName: Install Terraform
+  inputs:
+    terraformVersion: ${{ variables.terraformVersion}}
 - task: TerraformTask@0
   displayName: Terra Init
   inputs:
