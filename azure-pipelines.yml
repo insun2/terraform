@@ -10,13 +10,15 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
-
+- task: TerraformTask@0
+  displayName: Terra Init
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: $(System.DefaultWorkingDirectory)
+    backendServiceArm: 'Microsoft Azure'
+    backendAzureRmResourceGroupName: 'tfstate'
+    backendAzureRmStorageAccountName: 'tfstate5348'
+    backendAzureRmContainerName: 'tfstate'
+    backendAzureRmKey: 'prod.terraform.tfstate'
 
