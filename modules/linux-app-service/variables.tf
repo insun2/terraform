@@ -24,6 +24,12 @@ variable "application_stack" {
   })
 }
 
+variable "always_on" {
+  type = bool
+  description = "비활성으로 인해 앱이 유휴 상태가 되는 것을 방지합니다."
+  default = false
+}
+
 variable "tags" {
   type = map
 }

@@ -1,5 +1,5 @@
 
-module "app-acsell-front" {
+module "as-acSell-frontend" {
   source   = "../modules/linux-app-service"
   resource_group_name = module.rg-acsell.resource_group_name
   location = module.rg-acsell.resource_group_location
@@ -12,7 +12,7 @@ module "app-acsell-front" {
   tags = var.default_tags
 }
 
-module "app-acsell-back" {
+module "as-acSell-backend" {
   source   = "../modules/linux-app-service"
   resource_group_name = module.rg-acsell.resource_group_name
   location = module.rg-acsell.resource_group_location
