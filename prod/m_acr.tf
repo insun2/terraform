@@ -4,5 +4,5 @@ module "cr-acsell" {
   location = module.rg-acsell.resource_group_location
   name = "cracsell"
   sku = "Basic"
-  tags = var.default_tags
+  tags = local.default_tags
 }
