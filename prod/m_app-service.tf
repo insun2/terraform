@@ -9,18 +9,18 @@ module "as-acSell-frontend" {
     docker_image = "cracsell.azurecr.io/front"
     docker_image_tag = "latest"
   }
-  tags = var.default_tags
+  tags = local.default_tags
 }
 
-# module "as-acSell-backend" {
-#   source   = "../modules/linux-app-service"
-#   resource_group_name = module.rg-acsell.resource_group_name
-#   location = module.rg-acsell.resource_group_location
-#   service_plan_id = module.plan-acSell.app_service_plan_id
-#   name = "as-acSell-backend"
-#   application_stack = {
-#     docker_image = "cracsell.azurecr.io/backend"
-#     docker_image_tag = "latest"
-#   }
-#   tags = var.default_tags
-# }
+module "as-acSell-backend" {
+  source   = "../modules/linux-app-service"
+  resource_group_name = module.rg-acsell.resource_group_name
+  location = module.rg-acsell.resource_group_location
+  service_plan_id = module.plan-acSell.app_service_plan_id
+  name = "as-acSell-backend"
+  application_stack = {
+    docker_image = "cracsell.azurecr.io/backend"
+    docker_image_tag = "latest"
+  }
+  tags = local.default_tags
+}
