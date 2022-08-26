@@ -1,7 +1,7 @@
 locals {
   location = "Korea Central"
   default_tags = {
-    Environment = "stage"
+    Environment = "insun"
     ManagedByTerraform = "true"
   }
 }
@@ -15,7 +15,7 @@ terraform {
   }
   backend "azurerm" {
     resource_group_name = "tfstate"
-    storage_account_name = "tfstate5348"
+    storage_account_name = "tfstate7755"
     container_name = "tfstate"
     key = "stage.terraform.tfstate" 
   }
