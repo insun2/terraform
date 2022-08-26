@@ -9,7 +9,7 @@ module "as-acSell-frontend" {
     docker_image = "cracsell.azurecr.io/front"
     docker_image_tag = "staging"
   }
-  tags = var.default_tags
+  tags = local.default_tags
 }
 
 module "as-acSell-backend" {
@@ -22,5 +22,5 @@ module "as-acSell-backend" {
     docker_image = "cracsell.azurecr.io/backend"
     docker_image_tag = "staging"
   }
-  tags = var.default_tags
+  tags = local.default_tags
 }

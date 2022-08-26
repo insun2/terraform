@@ -6,5 +6,5 @@ module "plan-acSell" {
   os_type = "Linux"
   sku_name = "B1"
   name = "plan-acSell"
-  tags = var.default_tags
+  tags = local.default_tags
 }
