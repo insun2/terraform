@@ -1,7 +1,7 @@
 locals {
   location = "Korea Central"
   default_tags = {
-    Environment = "insun"
+    Environment = "insun2"
     ManagedByTerraform = "true"
   }
 }
